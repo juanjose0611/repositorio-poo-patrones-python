@@ -6,9 +6,7 @@ Descripción: Notifica automáticamente a múltiples dispositivos de visualizaci
 """
 from abc import ABC, abstractmethod
 
-# ==========================================
 # 1. INTERFAZ OBSERVER (Observador)
-# ==========================================
 class Observador(ABC):
     """Interfaz que deben implementar todos los dispositivos interesados en los cambios."""
     
@@ -17,9 +15,7 @@ class Observador(ABC):
         pass
 
 
-# ==========================================
 # 2. CLASE SUBJECT (Sujeto Observable)
-# ==========================================
 class EstacionMeteorologica:
     """Sujeto que mantiene la lista de observadores y notifica cambios de estado."""
     
@@ -53,9 +49,7 @@ class EstacionMeteorologica:
         self.notificar_observadores()
 
 
-# ==========================================
 # 3. OBSERVADORES CONCRETOS
-# ==========================================
 class PantallaLED(Observador):
     """Dispositivo de visualización principal en la oficina central."""
     
@@ -77,9 +71,7 @@ class RegistroLogger(Observador):
         print(f"  --> [Sistema Logger]: Guardando registro en base de datos -> Temp: {temperatura}, Humedad: {humedad}, Presión: {presion}")
 
 
-# ==========================================
 # EJEMPLO DE EJECUCIÓN
-# ==========================================
 if __name__ == "__main__":
     print("--- PRUEBA DEL PATRÓN OBSERVER ---")
 
